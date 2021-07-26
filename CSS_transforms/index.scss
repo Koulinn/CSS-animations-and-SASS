@@ -1,0 +1,30 @@
+.container {
+    perspective: 700px;
+    #transforms2D{
+        transition: transform 1s linear;
+        
+    }
+    #transforms3D{
+        transition: transform 1s linear;
+        
+    }
+    
+    #transforms2D:hover{
+        transform: skew(20deg, 30deg);
+
+    }
+
+    #transforms3D:hover{
+        transform: rotateY(90deg);
+        
+
+    }
+    
+
+       .square{
+        
+        width: 256px;
+        height: 256px;
+        background-color: crimson;
+    }
+}
