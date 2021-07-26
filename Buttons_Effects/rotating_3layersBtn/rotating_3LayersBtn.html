@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #212121;
+            font-family: sans-serif;
+        }
+
+        a {
+            padding: 40px 80px;
+            text-decoration: none;
+            text-transform: uppercase;
+            background: #f1c40f;
+            color: white;
+            font-size: 25px;
+            letter-spacing: 2px;
+            position: relative;
+            /* transition: all .5s; */
+            /* overflow: hidden; */
+
+        }
+
+        a::before{
+            content: 'Click me';
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 100%;
+            background: #2ce771;
+            /* z-index: -1; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: rotateX(270deg);
+            transform-origin: top;
+            transition: all 1s;
+        }
+
+        a:hover::before, a:hover::after{
+            transform: rotateX(0deg);
+        }
+
+        a::after{
+            content: 'Click me';
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 100%;
+            background: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: rotateX(270deg);
+            transform-origin: bottom;
+            transition: all 1s;
+            transition-delay: .5s;
+        }
+
+        /* can change origin to create different effects */
+
+        
+    </style>
+</head>
+
+<body>
+    <a href="#">Click me</button>
+</body>
+
+</html>
