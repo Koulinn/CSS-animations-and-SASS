@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #222;
+        }
+
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: transparent;
+            font-family: sans-serif;
+            font-size: 22px;
+            letter-spacing: 3px;
+            height: 60px;
+            width: 200PX;
+            line-height: 60px;
+            text-align: center;
+            color: #fdc518;
+            position: relative;
+            /* transition: all .3s; */
+            /* overflow: hidden; */
+        }
+
+        a:before {
+            content: '';
+            position: absolute;
+            height: 90px;
+            width: 200px;
+            /* to position the content */
+            top: -15px;
+            left: 0px;
+            border-left: 2px solid red;
+            border-right: 2px solid #fdc518;
+            transition: all 1s;
+        }
+
+        a:after {
+            content: '';
+            position: absolute;
+            height: 60px;
+            width: 230px;
+            /* to position the content */
+            top: 0px;
+            left: -15px;
+            border-top: 2px solid red;
+            border-bottom: 2px solid #fdc518;
+            transition: all 1s;
+
+            /* extra effects can also add delay to make it move after one effect */
+            transition-duration: .3s;
+
+        }
+        a:hover:before{
+            transform: rotateY(180deg);
+        }
+
+        a:hover:after{
+            transform: rotateX(180deg);
+        }
+
+    </style>
+</head>
+
+<body>
+    <a href="">Click me</a>
+</body>
+
+</html>
