@@ -1,0 +1,59 @@
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    a{
+        text-decoration: none;
+        color: #351435;
+        font-family: sans-serif;
+        letter-spacing: 2px;
+        font-size: 40px;
+        border: 5px solid #262626;
+        padding: 40px 80px;
+        position: relative;
+        transition: all 1s;
+        // overflow: hidden;
+
+    }
+
+
+    // You can change effect altering transform properties of the elements
+    a:before{
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: #262626;
+        transition: 1s;
+        transform: rotateX(90deg);
+        z-index: -1;
+    }
+
+    a:after{
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: #262626;
+        transition: 1s;
+        transform: rotateY(90deg);
+        z-index: -1;
+    }
+
+    a:hover:before{
+        transform: rotateX(0deg);
+    }
+    a:hover:after{
+        transform: rotateX(0deg);
+    }
+
+    a:hover{
+        color: white;
+    }
+}
