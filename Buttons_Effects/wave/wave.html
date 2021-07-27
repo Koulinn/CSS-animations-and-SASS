@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #272727;
+        }
+
+        a {
+            text-decoration: none;
+            padding: 15px 30px;
+            color: #00aeff;
+            border: 2px solid #00aeff;
+            font-size: 18px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+            transition: all 1s;
+        }
+
+        .wave{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0px;
+            /* set the div under the btn */
+            top: calc(100% + 22px);
+            background-color: #00aeff;
+            transition: all 1s;
+            z-index: -1;
+        }
+
+        a:hover .wave {
+            top: 0px;
+        }
+
+        a:hover{
+            color: white;
+        }
+
+        .wave::before{
+            content: '';
+            position: absolute;
+            top: -22px;
+            left: 0px;
+            width: 100%;
+            /* it MUST have the same height from the base image */
+            height: 22px;
+            background: url(../assets/wave.png);
+            animation: wavy 0.5s  linear  infinite;
+
+        }
+
+        @keyframes wavy{
+            0% {background-position-x: 0;}
+            /* must be the full width of the image */
+            100% {background-position-x:118px;}
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">
+        Click me
+        <div class="wave"></div>
+    </a>
+</body>
+
+</html>
