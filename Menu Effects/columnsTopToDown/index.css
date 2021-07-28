@@ -19,58 +19,57 @@ ul li {
 
 ul li a{
     text-decoration: none;
-    color: #3d3d3d;
     display: block;
-    text-transform: uppercase;
-    padding: 10px 15px;
+    /* padding: 10px 15px; */
     margin: 0px 10px;
     position: relative;
+    width: 120px;
+    /* line-height and height set to same value will center the text vertically */
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    text-transform: capitalize;
     transition: all .5s;
+    color: #262626;
 }
 
 a:hover{
-    background-color: #e91e63;
     color: white;
 }
 
-a:before {
-    content: "";
+ul li span{
     position: absolute;
-    bottom: 12px;
-    left: 12px;
-    width: 12px;
-    height: 12px;
-    border: 3px solid #e91e63;
-    /* set width for each border corner */
-    border-width: 0 0 3px 3px;
-    opacity: 0;
-    transition: all .3s;
+    /* can swap width and height */
+    width: 25%;
+    height: 100%;
+    background-color: #262626;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    transform: scaleY(0);
+    transition: all .5s;
+    /* set starting point from the transform can change directions */
+    transform-origin: top;
 }
 
-/* set hovered position */
-a:hover::before{
-    opacity: 1;
-    bottom: -8px;
-    left: -8px;
+a:hover span{
+    /* can change to X */
+    transform: scaleY(1);
 }
 
-a:after {
-    content: "";
-    position: absolute;
-    /* set initial position */
-    top: 12px;
-    right: 12px;
-    /* set size */
-    width: 12px;
-    height: 12px;
-    border: 3px solid #e91e63;
-    border-width: 3px 3px 0 0;
-    opacity: 0;
-    transition: all .3s;
+/* can set delay to make like a cascade effect */
+span:nth-child(2){
+    /* can swap left to top to make other effects */
+    left: 25%;
+    transition-delay: .15s;
 }
 
-a:hover::after{
-    opacity: 1;
-    top: -8px;
-    right: -8px;
+span:nth-child(3){
+    left: 50%;
+    transition-delay: .3s;
+}
+
+span:nth-child(4){
+    left: 75%;
+    transition-delay: .45s;
 }
