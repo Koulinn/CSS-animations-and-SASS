@@ -1,0 +1,20 @@
+.banner {
+	height: 100vh;
+	background: url(bg.png);
+	/* position of the BG this one is img repeated */
+	background-position: 0 0;
+	animation: animated-pattern 15s linear infinite;
+}
+
+@keyframes animated-pattern {
+	/* from initial */
+	from { background-position: 0 0 }
+/* to end position */
+	to { background-position: 800px 600px; }
+}
+
+
+
+
+
+
